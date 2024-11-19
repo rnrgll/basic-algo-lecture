@@ -2,10 +2,24 @@
 using namespace std;
 
 void insert(int idx, int num, int arr[], int& len){
+  //idx부터 끝까지 원소 뒤로 한 칸씩 이동
+  for(int i=len-1; i>=idx; i--){
+    arr[i+1] = arr[i];
+  }
+
+  arr[idx] = num;
+
+  len++; //배열 크기 늘리기
 
 }
 
 void erase(int idx, int arr[], int& len){
+  //idx+1부터 끝까지 원소 앞으로 한 칸씩 이동
+  for(int i=idx+1; i<len; i++){
+    arr[i-1] = arr[i];
+  }
+
+  len--;
   
 }
 
